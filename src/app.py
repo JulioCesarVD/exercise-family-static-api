@@ -80,7 +80,7 @@ def get_Member(member_id):
      member = jackson_family.get_member(member_id)
      if member:
          return jsonify(member), 200
-     return jsonify({"error": "Miembro no encontrado"}), 400 
+     return jsonify({"error": "Miembro no encontrad"}), 400 
     
     
 
