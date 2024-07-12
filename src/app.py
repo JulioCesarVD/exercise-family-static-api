@@ -15,6 +15,28 @@ CORS(app)
 # create the jackson family object
 jackson_family = FamilyStructure("Jackson")
 
+John = {
+    "first_name": "John",
+    "age": 33,
+    "lucky_numbers": [7, 13, 22]
+}
+
+Jane = {
+    "first_name": "Jane",
+    "age": 35,
+    "lucky_numbers": [10, 14, 3]
+}
+
+Jimmy = {
+    "first_name": "Jimmy",
+    "age": 5,
+    "lucky_numbers": [1]
+}
+
+jackson_family.add_member(John)
+jackson_family.add_member(Jane)
+jackson_family.add_member(Jimmy)
+
 # Handle/serialize errors like a JSON object
 @app.errorhandler(APIException)
 def handle_invalid_usage(error):
@@ -31,7 +53,6 @@ def handle_hello():
     # this is how you can use the Family datastructure by calling its methods
     members = jackson_family.get_all_members()
     response_body = {
-        "hello": "world",
         "family": members
     }
 
